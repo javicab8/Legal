@@ -28,8 +28,8 @@ namespace Legal.Backend.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var postgreSQLConnectionConfiguration = new PostgreSQLConfiguration(Configuration.GetConnectionString("PostgreSQLConnection"));
-            services.AddSingleton(postgreSQLConnectionConfiguration);
+            var postgreSQLContext = new PostgreSQLContext(Configuration.GetConnectionString("PostgreSQLConnection"));
+            services.AddSingleton(postgreSQLContext);
 
             services.AddScoped<IDocumentTypeRepository, DocumentTypeRepository>();
 

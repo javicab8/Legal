@@ -8,21 +8,16 @@ namespace Legal.Backend.Data.Repositories
 {
     public class DocumentTypeRepository : IDocumentTypeRepository
     {
-        private PostgreSQLConfiguration _postgreSQLConnection;
+        private PostgreSQLContext _postgreSQLContext;
 
-        public DocumentTypeRepository(PostgreSQLConfiguration connectionString)
+        public DocumentTypeRepository(PostgreSQLContext postgreSQLContext)
         {
-            _postgreSQLConnection = connectionString;
+            _postgreSQLContext = postgreSQLContext;
         }
 
-        protected NpgsqlConnection dbConnection()
-        {
-            return new NpgsqlConnection(_postgreSQLConnection.ConnectionString);
-        }
-        
         public async Task<bool> DeleteDocumentType(DocumentType documentType)
         {
-            var db = dbConnection();
+            var db = _postgreSQLContext.CreateConnection();
             var sql = @"
                     DELETE
                     FROM document_types
@@ -34,7 +29,7 @@ namespace Legal.Backend.Data.Repositories
 
         public async Task<IEnumerable<DocumentType>> GetAllDocumentTypes()
         {
-            var db = dbConnection();
+            var db = _postgreSQLContext.CreateConnection();
             var sql = @"
                     SELECT id, process, name, subdocument, control_medium
                     FROM document_types
@@ -44,7 +39,7 @@ namespace Legal.Backend.Data.Repositories
 
         public async Task<DocumentType> GetDocumentType(int id)
         {
-            var db = dbConnection();
+            var db = _postgreSQLContext.CreateConnection();
             var sql = @"
                     SELECT id, process, name, subdocument, control_medium
                     FROM document_types
@@ -55,7 +50,7 @@ namespace Legal.Backend.Data.Repositories
 
         public async Task<bool> InsertDocumentType(DocumentType documentType)
         {
-            var db = dbConnection();
+            var db = _postgreSQLContext.CreateConnection();
             var sql = @"
                     INSERT INTO 
                         document_types(process, name, subdocument, control_medium)
@@ -67,7 +62,7 @@ namespace Legal.Backend.Data.Repositories
 
         public async Task<bool> UpdateDocumentType(DocumentType documentType)
         {
-            var db = dbConnection();
+            var db = _postgreSQLContext.CreateConnection();
             var sql = @"
                     UPDATE document_types SET
                         process = @Process,

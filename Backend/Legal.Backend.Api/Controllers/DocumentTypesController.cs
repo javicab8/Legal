@@ -31,7 +31,7 @@ namespace Legal.Backend.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDocumentType([FromBody] DocumentType documentType)
         {
-            if (documentType == null)
+            if (documentType is null)
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -42,11 +42,11 @@ namespace Legal.Backend.Api.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateDocumentType([FromBody] DocumentType documentType)
         {
-            if (documentType == null)
+            if (documentType is null)
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            await _documentTypeRepository.InsertDocumentType(documentType);
+            await _documentTypeRepository.UpdateDocumentType(documentType);
             return NoContent();
         }
 
