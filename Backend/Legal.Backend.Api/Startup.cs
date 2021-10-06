@@ -32,6 +32,7 @@ namespace Legal.Backend.Api
             services.AddSingleton(postgreSQLContext);
 
             services.AddScoped<IDocumentTypeRepository, DocumentTypeRepository>();
+            services.AddScoped<IDocumentRepository, DocumentRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
