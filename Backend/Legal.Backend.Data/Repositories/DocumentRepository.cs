@@ -60,7 +60,13 @@ namespace Legal.Backend.Data.Repositories
                         FROM documents
                         WHERE id = @Id
                     ";
+<<<<<<< HEAD
                 return await db.QueryFirstOrDefaultAsync<Document>(sql, new { Id = id });
+=======
+                var document = await db.QueryFirstOrDefaultAsync<Document>(sql, new { Id = id });
+                Console.WriteLine(document.RegisterAt);
+                return document;
+>>>>>>> cc5507a81d35a972454ddf39ac4a333b6129e6c8
             }
         }
 
