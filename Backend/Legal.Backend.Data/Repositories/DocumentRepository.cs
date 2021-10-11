@@ -16,7 +16,7 @@ namespace Legal.Backend.Data.Repositories
             _context = context;
         }
 
-        public async Task<bool> DeleteDocument(Document document)
+        public async Task<bool> Delete(Document document)
         {
             using (var db = _context.CreateConnection())
             {
@@ -30,7 +30,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<IEnumerable<Document>> GetAllDocuments()
+        public async Task<IEnumerable<Document>> GetAll()
         {
             using (var db = _context.CreateConnection())
             {
@@ -47,7 +47,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<Document> GetDocument(int id)
+        public async Task<Document> Get(int id)
         {
             using (var db = _context.CreateConnection())
             {
@@ -65,7 +65,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<bool> InsertDocument(Document document)
+        public async Task<bool> Insert(Document document)
         {
             using (var db = _context.CreateConnection())
             {
@@ -79,7 +79,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<bool> UpdateDocument(Document document)
+        public async Task<bool> Update(Document document)
         {
             using (var db = _context.CreateConnection())
             {

@@ -4,12 +4,7 @@ using Legal.Backend.Core.Model;
 
 namespace Legal.Backend.Core.Repositories
 {
-    public interface IDocumentTypeRepository
+    public interface IDocumentTypeRepository : IRepository<DocumentType>
     {
-        Task<IEnumerable<DocumentType>> GetAllDocumentTypes();
-        Task<DocumentType> GetDocumentType(int id);
-        Task<bool> InsertDocumentType(DocumentType documentType);
-        Task<bool> UpdateDocumentType(DocumentType documentType);
-        Task<bool> DeleteDocumentType(DocumentType documentType);
     }
 }

@@ -19,13 +19,13 @@ namespace Legal.Backend.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllDocuments()
         {
-            return Ok(await _documentRepository.GetAllDocuments());
+            return Ok(await _documentRepository.GetAll());
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDocumentDetails(int id)
         {
-            return Ok(await _documentRepository.GetDocument(id));
+            return Ok(await _documentRepository.Get(id));
         }
 
         [HttpPost]
@@ -35,7 +35,7 @@ namespace Legal.Backend.Api.Controllers
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var created = await _documentRepository.InsertDocument(document);
+            var created = await _documentRepository.Insert(document);
             return Created("created", created);
         }
 
@@ -46,14 +46,14 @@ namespace Legal.Backend.Api.Controllers
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            await _documentRepository.UpdateDocument(document);
+            await _documentRepository.Update(document);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDocument(int id)
         {
-            await _documentRepository.DeleteDocument(new Document { Id =id });
+            await _documentRepository.Delete(new Document { Id =id });
             return NoContent();
         }
     }
