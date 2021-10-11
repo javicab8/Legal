@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Legal.Backend.Model\Legal.Backend.Model.csproj" />
+    <ProjectReference Include="..\Legal.Backend.Core\Legal.Backend.Core.csproj" />
     <ProjectReference Include="..\Legal.Backend.Data\Legal.Backend.Data.csproj" />
   </ItemGroup>
 

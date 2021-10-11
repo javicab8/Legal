@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
-using Legal.Backend.Model;
+using Legal.Backend.Core.Model;
+using Legal.Backend.Core.Repositories;
 
 namespace Legal.Backend.Data.Repositories
 {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Legal.Backend.Model;
+using Legal.Backend.Core.Model;
 
-namespace Legal.Backend.Data.Repositories
+namespace Legal.Backend.Core.Repositories
 {
     public interface IDocumentRepository
     {

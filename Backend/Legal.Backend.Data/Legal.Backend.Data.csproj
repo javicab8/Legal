@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Legal.Backend.Model\Legal.Backend.Model.csproj" />
+    <ProjectReference Include="..\Legal.Backend.Core\Legal.Backend.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

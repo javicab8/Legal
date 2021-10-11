@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Legal.Backend.Model
+namespace Legal.Backend.Core.Model
 {
     public class DocumentType
     {

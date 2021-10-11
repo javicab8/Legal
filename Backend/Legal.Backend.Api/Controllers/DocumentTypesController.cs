@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
-using Legal.Backend.Data.Repositories;
-using Legal.Backend.Model;
+using Legal.Backend.Core.Repositories;
+using Legal.Backend.Core.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Legal.Backend.Api.Controllers

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legal.Backend.Api", "Legal.Backend.Api\Legal.Backend.Api.csproj", "{00B95CC9-5E83-428C-8D92-CCA094A16384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legal.Backend.Model", "Legal.Backend.Model\Legal.Backend.Model.csproj", "{B69D429C-50F8-4E69-BB79-774DA1CBB0F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legal.Backend.Core", "Legal.Backend.Model\Legal.Backend.Core.csproj", "{B69D429C-50F8-4E69-BB79-774DA1CBB0F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legal.Backend.Data", "Legal.Backend.Data\Legal.Backend.Data.csproj", "{9D39AB5D-4D7E-4783-955B-7A0437D7F5BD}"
 EndProject

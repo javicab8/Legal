@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Legal.Backend.Data;
 using Legal.Backend.Data.Repositories;
+using Legal.Backend.Core.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
