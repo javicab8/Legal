@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Legal.Backend.Core\Legal.Backend.Core.csproj" />
-    <ProjectReference Include="..\Legal.Backend.Data\Legal.Backend.Data.csproj" />
+    <ProjectReference Include="..\Legal.Backend.Infrastructure\Legal.Backend.Infrastructure.csproj" />
+    <ProjectReference Include="..\Legal.Backend.Application\Legal.Backend.Application.csproj" />
   </ItemGroup>
 
 </Project>

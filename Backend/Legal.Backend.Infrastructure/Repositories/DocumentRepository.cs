@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
-using Legal.Backend.Core.Model;
+using Legal.Backend.Core.Entities;
 using Legal.Backend.Core.Repositories;
 
-namespace Legal.Backend.Data.Repositories
+namespace Legal.Backend.Infrastructure.Repositories
 {
     public class DocumentRepository : IDocumentRepository
     {
@@ -16,7 +16,7 @@ namespace Legal.Backend.Data.Repositories
             _context = context;
         }
 
-        public async Task<bool> Delete(Document document)
+        public async Task<bool> DeleteAsync(Document document)
         {
             using (var db = _context.CreateConnection())
             {
@@ -30,7 +30,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<IEnumerable<Document>> GetAll()
+        public async Task<IEnumerable<Document>> GetAllAsync()
         {
             using (var db = _context.CreateConnection())
             {
@@ -47,7 +47,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<Document> Get(int id)
+        public async Task<Document> GetAsync(int id)
         {
             using (var db = _context.CreateConnection())
             {
@@ -65,7 +65,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<bool> Insert(Document document)
+        public async Task<bool> InsertAsync(Document document)
         {
             using (var db = _context.CreateConnection())
             {
@@ -79,7 +79,7 @@ namespace Legal.Backend.Data.Repositories
             }
         }
 
-        public async Task<bool> Update(Document document)
+        public async Task<bool> UpdateAsync(Document document)
         {
             using (var db = _context.CreateConnection())
             {

@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Legal.Backend.Core.Model;
+using Legal.Backend.Core.Entities;
 using Legal.Backend.Core.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,13 +19,13 @@ namespace Legal.Backend.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllDocuments()
         {
-            return Ok(await _documentRepository.GetAll());
+            return Ok(await _documentRepository.GetAllAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDocumentDetails(int id)
         {
-            return Ok(await _documentRepository.Get(id));
+            return Ok(await _documentRepository.GetAsync(id));
         }
 
         [HttpPost]
@@ -35,7 +35,7 @@ namespace Legal.Backend.Api.Controllers
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var created = await _documentRepository.Insert(document);
+            var created = await _documentRepository.InsertAsync(document);
             return Created("created", created);
         }
 
@@ -46,14 +46,14 @@ namespace Legal.Backend.Api.Controllers
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            await _documentRepository.Update(document);
+            await _documentRepository.UpdateAsync(document);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDocument(int id)
         {
-            await _documentRepository.Delete(new Document { Id =id });
+            await _documentRepository.DeleteAsync(new Document { Id =id });
             return NoContent();
         }
     }

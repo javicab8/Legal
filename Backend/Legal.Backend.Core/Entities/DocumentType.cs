@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Legal.Backend.Core.Model
+namespace Legal.Backend.Core.Entities
 {
     public class DocumentType
     {
@@ -10,6 +10,6 @@ namespace Legal.Backend.Core.Model
         public string Subdocument { get; set; }
         public string ControlMedium { get; set; }
 
-        public List<Document> Documents { get; set; } = new List<Document>();
+        public ICollection<Document> Documents { get; set; } = new List<Document>();
     }
 }

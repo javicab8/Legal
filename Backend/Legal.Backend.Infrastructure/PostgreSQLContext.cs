@@ -1,7 +1,7 @@
 using System.Data;
 using Npgsql;
 
-namespace Legal.Backend.Data
+namespace Legal.Backend.Infrastructure
 {
     public class PostgreSQLContext
     {

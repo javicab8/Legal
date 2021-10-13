@@ -1,6 +1,6 @@
 using System;
 
-namespace Legal.Backend.Core.Model
+namespace Legal.Backend.Core.Entities
 {
     public class Document
     {
